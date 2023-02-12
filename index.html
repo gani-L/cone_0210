@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+     /* 이서윤체 폰트 적용을 위한 코드 */
+     @font-face {
+        font-family: "LeeSeoyun";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
+      /* body태그 자체에 css 요소 부여 */
+        body {
+	         font-family: "LeeSeoyun";
+	         margin: 0;
+	         display: flex;
+	         justify-content: center;
+	         background-image: url("./background.png");
+        }
+
+        .container {
+            width: 390px;
+            background-color: #ff9d73;
+            height: 100%;
+        }
+
+        .photos {
+            margin-top: 30px;
+        }
+
+        .photo-frame {
+            background-color: white;
+            margin: 15px 20px;
+            height: 330px;
+
+            background-size: cover;
+            position: relative;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .f-title {
+            color: white;
+            font-size: 25px;
+            font-weight: 900;
+        }
+
+        .f-date {
+            color: white;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        #image1 {
+            background-image: url('./1.jpg');
+        }
+
+        #image2 {
+            background-image: url('./2.jpg');
+        }
+
+        #image3 {
+            background-image: url('./3.jpg');
+        }
+
+        #image4 {
+            background-image: url('./4.jpg');
+        }
+
+        #image5 {
+            background-image: url('./5.jpg');
+        }
+
+        #image6 {
+            background-image: url('./6.jpg');
+        }
+
+        #image7 {
+            background-image: url('./7.jpg');
+        }
+
+        #image8 {
+            background-image: url('./8.jpg');
+        }
+
+        .photo_description {
+            color: white;
+            background-color: black;
+
+            width: fit-content;
+            padding: 0 20px;
+            margin-bottom: 10px;
+
+            border-radius: 10px;
+            position: absolute;
+            bottom: 0;
+
+            transform: translate(-50%);
+            left: 50%;
+        }
+
+        /* opacity : 투명도를 의미해요! 0% 투명하다. 즉 다 보인다. */
+        .showText {
+        	opacity: 0;
+        }
+
+        /* opacity : 투명도를 의미해요! 100% 투명하다. 즉 안보인다. */
+        /* transition : 나타날 때 0.5초동안 천천히 나타나는 효과를 주라는 의미에요 */
+        .hideText {
+        	opacity: 1;
+            transition: opacity 0.5s linear;
+        }
+    </style>
+    <script>
+        // 텍스트가 보여지는 기능
+        // 1. 몇 번째 사진에 마우스가 올라갔는지 확인(if문)
+        // 2. 해당 사진을 찾아 hideText class를 지워주고, showText는 삽입해줌
+        function showText(number) {
+        if (number === 1) {
+            document.querySelector("#desc1").classList.remove("hideText");
+            document.querySelector("#desc1").classList.add("showText");
+        } else if (number === 2) {
+            document.querySelector("#desc2").classList.remove("hideText");
+            document.querySelector("#desc2").classList.add("showText");
+        } else if (number === 3) {
+            document.querySelector("#desc3").classList.remove("hideText");
+            document.querySelector("#desc3").classList.add("showText");
+        } else if (number === 4)  {
+            document.querySelector("#desc4").classList.remove("hideText");
+            document.querySelector("#desc4").classList.add("showText");
+        } else if (number === 5) {
+            document.querySelector("#desc5").classList.remove("hideText");
+            document.querySelector("#desc5").classList.add("showText");
+        } else if (number === 6) {
+            document.querySelector("#desc6").classList.remove("hideText");
+            document.querySelector("#desc6").classList.add("showText");
+        } else if (number === 7) {
+            document.querySelector("#desc7").classList.remove("hideText");
+            document.querySelector("#desc7").classList.add("showText");
+        } else {
+            document.querySelector("#desc8").classList.remove("hideText");
+            document.querySelector("#desc8").classList.add("showText");
+        }
+        }
+
+        // 텍스트가 감춰지는 기능
+        // 1. 몇 번째 사진에서 마우스가 벗어났는지 확인(if문)
+        // 2. 해당 사진을 찾아 shotText class를 지워주고, hideText는 삽입해줌
+        function hideText(number) {
+        if (number === 1) {
+            document.querySelector("#desc1").classList.remove("showText");
+            document.querySelector("#desc1").classList.add("hideText");
+        } else if (number === 2) {
+            document.querySelector("#desc2").classList.remove("showText");
+            document.querySelector("#desc2").classList.add("hideText");
+        } else if (number === 3) {
+            document.querySelector("#desc3").classList.remove("showText");
+            document.querySelector("#desc3").classList.add("hideText");
+        } else if (number === 4) {
+            document.querySelector("#desc4").classList.remove("showText");
+            document.querySelector("#desc4").classList.add("hideText");
+        } else if (number === 5) {
+            document.querySelector("#desc5").classList.remove("showText");
+            document.querySelector("#desc5").classList.add("hideText");
+        } else if (number === 6) {
+            document.querySelector("#desc6").classList.remove("showText");
+            document.querySelector("#desc6").classList.add("hideText");
+        } else if (number === 7) {
+            document.querySelector("#desc7").classList.remove("showText");
+            document.querySelector("#desc7").classList.add("hideText");
+        } else {
+            document.querySelector("#desc8").classList.remove("showText");
+            document.querySelector("#desc8").classList.add("hideText");
+        }
+        }
+    </script>
+    </head>
+<body>
+    <div class="container">
+        <div class="photos">
+            <div id="image1" class="photo-frame"
+            
+                 onmouseover="hideText(1)"
+                 onmouseout="showText(1)"
+                 onclick="alertText(1)"
+            >
+                <span id="desc1" class="photo_description">
+                    오늘은 오랜만에<br>한솔겨운가은 모임!
+                </span>
+            </div>
+            <div id="image2" class="photo-frame"
+            
+                 onmouseover="hideText(2)"
+                 onmouseout="showText(2)"
+                 onclick="alertText(2)"
+            >
+                <span id="desc2" class="photo_description">
+                    문래에 갔는데 8시에<br>웨이팅 10팀 이상<br>실화입니까
+                </span>
+            </div>
+            <div id="image3" class="photo-frame"
+            
+                 onmouseover="hideText(3)"
+                 onmouseout="showText(3)"
+                 onclick="alertText(3)"
+            >
+                <span id="desc3" class="photo_description">
+                    다행히 겨우 들어간 집이 맛집이었다고 한다..
+                </span>
+            </div>
+            <div id="image4" class="photo-frame"
+            
+                 onmouseover="hideText(4)"
+                 onmouseout="showText(4)"
+                 onclick="alertText(4)"
+            >
+                <span id="desc4" class="photo_description">
+                    만장일치 1등한<br>홍콩 토스트의 위엄
+                </span>
+            </div>
+            <div id="image5" class="photo-frame"
+            
+                 onmouseover="hideText(5)"
+                 onmouseout="showText(5)"
+                 onclick="alertText(5)"
+            >
+                <span id="desc5" class="photo_description">
+                    한솔💞가은 하튜
+                </span>
+            </div>
+            <div id="image6" class="photo-frame"
+            
+                 onmouseover="hideText(6)"
+                 onmouseout="showText(6)"
+                 onclick="alertText(6)"
+            >
+                <span id="desc6" class="photo_description">
+                    겨운💞가은 하튜
+                </span>
+            </div>
+            <div id="image7" class="photo-frame"
+            
+                 onmouseover="hideText(7)"
+                 onmouseout="showText(7)"
+                 onclick="alertText(7)"
+            >
+                <span id="desc7" class="photo_description">
+                    다같이 ✌브이✌
+                </span>
+            </div>
+            <div id="image8" class="photo-frame"
+            
+                 onmouseover="hideText(8)"
+                 onmouseout="showText(8)"
+                 onclick="alertText(8)"
+            >
+                <span id="desc8" class="photo_description">
+                    한 달에 한 번은<br>만나기로 약속🙏
+                </span>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="f-title">🍀Tong Tong in Mullae🍀</p>
+            <p class="f-date">2023.02.10</p>
+        </div>
+    </div>
+</body>
+</html>
